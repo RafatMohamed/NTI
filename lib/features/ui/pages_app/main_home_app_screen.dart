@@ -107,16 +107,17 @@ class HomeMainPage extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                   ),
                   Container(
-                    width: 15,
-                    height: 15,
+                    width: 20,
+                    height: 21,
                     decoration: BoxDecoration(
-                      color: MyColors.containerPersonColor,
+                      color: MyColors.greenColor,
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Center(
-                      child: TextWidget(
+                      child: TextWidgetApp(
                         text: "5",
-                        fontSize: 16,
+                        fontSize: 14,
+                        color: MyColors.whiteColor,
                       ),
                     ),
                   ),

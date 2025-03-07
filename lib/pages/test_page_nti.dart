@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:nti_proj/widget/default_contanier.dart';
 import '../container_mode.dart';
 import '../core/resources/images/my_images.dart';
+import '../widget/default_contanier.dart';
 List <ContanierObj> list = [
 ContanierObj(text: "EG", color: Colors.black),
 ContanierObj(text: "EN", color: Colors.red),

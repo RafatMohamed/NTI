@@ -12,12 +12,20 @@ class TaskTextForm extends StatelessWidget {
       this.iconSuffix = false,
       this.color = Colors.white,
       required this.labelText,
-      this.maxLine = 1, required this.hintText});
+      this.maxLine = 1, required this.hintText,
+        this.keyboardType=TextInputType.text,
+       required this.onFieldSubmitted, this.controller,
+
+      });
   final bool iconSuffix;
   final Color color;
   final String labelText;
   final String hintText;
   final int maxLine;
+  final TextInputType keyboardType;
+  final Function(String) onFieldSubmitted;
+  final TextEditingController? controller;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +36,8 @@ class TaskTextForm extends StatelessWidget {
       padding: EdgeInsetsDirectional.symmetric(horizontal: 10, vertical: 20),
       margin: EdgeInsets.symmetric(horizontal: 4),
       child: TextFormField(
+        controller: controller,
+        onFieldSubmitted: onFieldSubmitted,
         decoration: InputDecoration(
           border: InputBorder.none,
          contentPadding: EdgeInsetsDirectional.only(top: 10,bottom: 10),
@@ -59,9 +69,9 @@ class TaskTextForm extends StatelessWidget {
             fontWeight: FontWeight.w200,
           ),
         ),
-        keyboardType: TextInputType.multiline,
+        keyboardType:keyboardType,
         maxLines: maxLine,
-        textInputAction: TextInputAction.newline,
+        textInputAction: TextInputAction.next,
         enableSuggestions: true,
         textAlign: TextAlign.start,
         style: TextStyle(
@@ -236,6 +246,7 @@ class _TimeTextFormStState extends State<TimeTextFormSt> {
 
           // 2. Show the Time Picker
           final TimeOfDay? pickedTime = await showTimePicker(
+            // ignore: use_build_context_synchronously
             initialTime: TimeOfDay.now(), context: context,
             // context: context,
           );

@@ -31,8 +31,8 @@ class TextFormFieldApp extends StatefulWidget {
     this.borderDecorationColor = MyColors.greenColor,
      this.validator,
     required this.onFieldSubmitted,
-    required this.controller,
     this.focusNode,
+    required this.controller,
   });
 
   final bool iconSuffix;
@@ -57,8 +57,8 @@ class TextFormFieldApp extends StatefulWidget {
   final TextInputAction textInputAction;
   final FormFieldValidator? validator;
   final Function(String) onFieldSubmitted;
-  final TextEditingController controller;
   final FocusNode? focusNode;
+  final TextEditingController controller;
 
   @override
   State<TextFormFieldApp> createState() => _TextFormFieldAppState();

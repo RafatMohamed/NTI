@@ -3,6 +3,7 @@ import 'package:nti_proj/core/widget_app_toDo/text_widget_app.dart';
 
 import '../../features/models/user_app.dart';
 import '../../features/ui/pages_app/update_profile__screen.dart';
+import '../resources/images/my_images.dart';
 
 class InfoUserWidget extends StatelessWidget {
   const InfoUserWidget({super.key, required this.user});
@@ -27,12 +28,19 @@ class InfoUserWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(30),
-              child: Image.asset(
-                user.imgProfile,
-                width: 60,
+              child: user.imgProfile == null
+                  ?Image.asset(
+                MyImages.imageFlagpalestine,
                 height: 60,
+                width: 60,
                 fit: BoxFit.fill,
-              ),
+              ) : Image.file(
+                user.imgProfile!,
+                height: 60,
+                width: 60,
+                fit: BoxFit.fill,
+              )
+
             ),
             SizedBox(
               width: 10,

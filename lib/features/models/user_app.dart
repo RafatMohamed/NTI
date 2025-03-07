@@ -1,7 +1,11 @@
- import '../../../core/resources/images/my_images.dart';
+ import 'dart:io';
+
 
 class User{
   String name;
-  String imgProfile;
-  User({ this.name='', this.imgProfile=MyImages.imageFlagpalestine});
-}
+  File? imgProfile;
+  User({
+    required this.name,
+     this.imgProfile,
+  });
+  }

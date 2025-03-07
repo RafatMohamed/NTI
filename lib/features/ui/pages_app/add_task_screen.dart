@@ -147,7 +147,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HomeMainPage(user: User()),
+                      builder: (context) => HomeMainPage(user: User(name: '')),
                     ),
                   );
                 },
