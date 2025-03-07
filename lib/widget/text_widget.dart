@@ -28,7 +28,7 @@ class TextWidget extends StatelessWidget {
         color: color,
         fontSize: fontSize,
         fontWeight: fontWeight,
-        fontFamily: fontFamily,
+        fontFamily: "LexendDeca",
         fontStyle: fontStyle,
       ),
     );

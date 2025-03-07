@@ -3,7 +3,7 @@ import 'dart:ui';
 import '../../core/resources/Colors/my_colors.dart';
 import '../../core/resources/Icons/my_icons.dart';
 
-class IconModels {
+ class IconModels {
   String icon;
   Color iconColor;
   Color iconColorDecoration;
