@@ -6,13 +6,14 @@ import '../../../core/widget_app_toDo/default_container_vert.dart';
 import '../../../core/widget_app_toDo/icon_add_task.dart';
 import '../../../core/widget_app_toDo/info_user_widget.dart';
 import '../../../core/widget_app_toDo/text_widget_app.dart';
-import '../../../widget/text_widget.dart';
 import '../../models/icon_models.dart';
 import '../../models/user_app.dart';
 
 class HomeMainPage extends StatelessWidget {
   const HomeMainPage({super.key, required this.user});
+
   final User user;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,9 @@ class HomeMainPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InfoUserWidget(user: user,),
+                InfoUserWidget(
+                  user: user,
+                ),
                 IconAddTask(),
               ],
             ),
@@ -32,7 +35,9 @@ class HomeMainPage extends StatelessWidget {
               height: 34,
             ),
             Container(
-              padding: EdgeInsetsDirectional.all(20,),
+              padding: EdgeInsetsDirectional.all(
+                20,
+              ),
               margin: EdgeInsetsDirectional.symmetric(horizontal: 20),
               height: 135,
               decoration: BoxDecoration(
@@ -128,7 +133,7 @@ class HomeMainPage extends StatelessWidget {
               height: 26,
             ),
             SingleChildScrollView(
-              padding: EdgeInsetsDirectional.only(start: 20),
+                padding: EdgeInsetsDirectional.only(start: 20),
                 scrollDirection: Axis.horizontal,
                 physics: BouncingScrollPhysics(),
                 child: Row(

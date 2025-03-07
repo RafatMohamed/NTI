@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../resources/Icons/my_icons.dart';
-class  IconPop extends StatelessWidget{
+
+class IconPop extends StatelessWidget {
   const IconPop({super.key});
 
   @override
@@ -17,5 +18,4 @@ class  IconPop extends StatelessWidget{
       ),
     );
   }
-
 }

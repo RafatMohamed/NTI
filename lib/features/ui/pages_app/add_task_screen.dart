@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../core/resources/Colors/my_colors.dart';
 import '../../../core/widget_app_toDo/icon_pop.dart';
 import '../../../core/widget_app_toDo/selector_form_field_widget_app.dart';
@@ -33,7 +34,6 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
-
   @override
   Widget build(BuildContext context) {
     final TextEditingController nameController = TextEditingController();
@@ -62,12 +62,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   color: MyColors.whiteColor,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: DropdownButtonFormField<DropDownFormField>(
                   decoration: InputDecoration(
                     floatingLabelBehavior: FloatingLabelBehavior.always,
                     border: InputBorder.none,
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
                     labelText: "Task Group",
                     labelStyle: TextStyle(
                       fontSize: 9,
@@ -92,7 +94,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     ),
                   ),
                   items: AddTaskPage.list.map(
-                        (e) {
+                    (e) {
                       return DropdownMenuItem(
                         value: e,
                         child: Row(
@@ -101,7 +103,11 @@ class _AddTaskPageState extends State<AddTaskPage> {
                               e.iconModel.icon,
                               width: 24,
                               height: 24,
-                              colorFilter:ColorFilter.mode(e.iconModel.iconColor ==MyColors.whiteColor ? MyColors.containerWorkColor : e.iconModel.iconColor, BlendMode.srcIn) ,
+                              colorFilter: ColorFilter.mode(
+                                  e.iconModel.iconColor == MyColors.whiteColor
+                                      ? MyColors.containerWorkColor
+                                      : e.iconModel.iconColor,
+                                  BlendMode.srcIn),
                             ),
                             const SizedBox(width: 10),
                             TextWidgetApp(
@@ -118,9 +124,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 ),
               ),
               TextFormFieldApp(
-                onFieldSubmitted: (value1) {
-
-                },
+                onFieldSubmitted: (value1) {},
                 controller: nameController,
                 hintText: "Task Name",
                 labelText: "Enter task name",
@@ -129,9 +133,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 radius: 15,
               ),
               TextFormFieldApp(
-                onFieldSubmitted: (value2) {
-
-                },
+                onFieldSubmitted: (value2) {},
                 controller: nameController,
                 hintText: "Description",
                 labelText: "Enter task description . . . ",

@@ -3,6 +3,7 @@ import 'package:nti_proj/core/widget_app_toDo/text_widget_app.dart';
 
 class AppBarApp extends StatelessWidget {
   const AppBarApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AppBar(

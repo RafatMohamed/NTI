@@ -9,6 +9,7 @@ class IConSvgWidget extends StatelessWidget {
     this.colorContanier,
     this.radius = 5,
   });
+
   final Widget icon;
   final double? width;
   final double? height;

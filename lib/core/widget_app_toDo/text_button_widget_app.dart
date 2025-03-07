@@ -46,7 +46,8 @@ class TextButtonWidgetGo extends StatelessWidget {
           overlayColor: Colors.cyan,
         ),
         onPressed: onTap,
-        child: TextWidgetApp(text: text,
+        child: TextWidgetApp(
+          text: text,
           fontSize: 19,
           color: textColor,
           fontWeight: FontWeight.w300,

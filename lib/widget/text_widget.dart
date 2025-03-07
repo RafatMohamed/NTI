@@ -16,7 +16,8 @@ class TextWidget extends StatelessWidget {
     this.fontSize = 18,
     this.color = Colors.black,
     this.fontFamily,
-    this.fontStyle, this.textAlign=TextAlign.start,
+    this.fontStyle,
+    this.textAlign = TextAlign.start,
   });
 
   @override

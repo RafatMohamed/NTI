@@ -7,10 +7,12 @@ import '../resources/images/my_images.dart';
 
 class InfoUserWidget extends StatelessWidget {
   const InfoUserWidget({super.key, required this.user});
+
   final User user;
+
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
+    return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(
           builder: (context) {
@@ -27,21 +29,20 @@ class InfoUserWidget extends StatelessWidget {
         child: Row(
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(30),
-              child: user.imgProfile == null
-                  ?Image.asset(
-                MyImages.imageFlagpalestine,
-                height: 60,
-                width: 60,
-                fit: BoxFit.fill,
-              ) : Image.file(
-                user.imgProfile!,
-                height: 60,
-                width: 60,
-                fit: BoxFit.fill,
-              )
-
-            ),
+                borderRadius: BorderRadius.circular(30),
+                child: user.imgProfile == null
+                    ? Image.asset(
+                        MyImages.imageFlagpalestine,
+                        height: 60,
+                        width: 60,
+                        fit: BoxFit.fill,
+                      )
+                    : Image.file(
+                        user.imgProfile!,
+                        height: 60,
+                        width: 60,
+                        fit: BoxFit.fill,
+                      )),
             SizedBox(
               width: 10,
             ),
@@ -68,7 +69,5 @@ class InfoUserWidget extends StatelessWidget {
         ),
       ),
     );
-
   }
-
 }

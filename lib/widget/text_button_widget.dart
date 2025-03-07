@@ -6,6 +6,7 @@ class TextButtonWidget extends StatelessWidget {
       required this.text,
       this.fillColor = Colors.white,
       this.backgroundColor = Colors.green});
+
   final String text;
   final Color fillColor;
   final Color backgroundColor;
@@ -16,13 +17,13 @@ class TextButtonWidget extends StatelessWidget {
       width: double.infinity,
       height: 50,
       decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            color: Colors.green,
-            blurRadius: 10,
-            offset: Offset(0, 5),
-          )
-        ],
+          boxShadow: [
+            BoxShadow(
+              color: Colors.green,
+              blurRadius: 10,
+              offset: Offset(0, 5),
+            )
+          ],
           border: Border.all(
             color: fillColor,
             style: BorderStyle.solid,

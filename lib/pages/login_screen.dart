@@ -10,26 +10,28 @@ import '../widget/text_form.dart';
 import 'hi_login.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key, required this.user1,});
- final UserInputInfo user1;
+  const LoginScreen({
+    super.key,
+    required this.user1,
+  });
+
+  final UserInputInfo user1;
 
   @override
   Widget build(BuildContext context) {
-    String inputEmail ="";
-    String inputPassword="";
+    String inputEmail = "";
+    String inputPassword = "";
     return BlocProvider(
-      create: (context) =>
-          TestCubit(
-            user: user1,
-          ),
+      create: (context) => TestCubit(
+        user: user1,
+      ),
       child: Scaffold(
         body: BlocConsumer<TestCubit, TestState>(
           listener: (context, state) {
-            if(state is LoginSuccess){
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HiUSer()));
-            }
-            else if (state is TestError) {
+            if (state is LoginSuccess) {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => HiUSer()));
+            } else if (state is TestError) {
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
@@ -37,8 +39,7 @@ class LoginScreen extends StatelessWidget {
                     content: Text("Error"),
                     title: Text(state.message),
                     shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)
-                    ),
+                        borderRadius: BorderRadius.circular(20)),
                     actions: [
                       TextButton(
                         onPressed: () {
@@ -46,11 +47,9 @@ class LoginScreen extends StatelessWidget {
                         },
                         child: Text("Ok"),
                       )
-                    ]
-                ),
+                    ]),
               );
             }
-
           },
           builder: (context, state) {
             final cubit = context.read<TestCubit>();
@@ -60,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   TaskTextForm(
                     onFieldSubmitted: (email) {
-                     inputEmail = email;
+                      inputEmail = email;
                     },
                     keyboardType: TextInputType.emailAddress,
                     hintText: "Email",
@@ -68,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   TaskTextForm(
                     onFieldSubmitted: (password) {
-                    inputPassword = password;
+                      inputPassword = password;
                     },
                     keyboardType: TextInputType.visiblePassword,
                     hintText: "Enter your password",
@@ -80,7 +79,8 @@ class LoginScreen extends StatelessWidget {
                   TextButtonWidgetGo(
                     text: "Save ",
                     onTap: () {
-                      cubit.submitLogin( email: inputEmail  , password: inputPassword);
+                      cubit.submitLogin(
+                          email: inputEmail, password: inputPassword);
                     },
                   ),
                 ],
@@ -91,5 +91,4 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-
 }

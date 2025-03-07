@@ -7,6 +7,7 @@ class IconWidget extends StatelessWidget {
   final double? height;
 
   final double? size;
+
   const IconWidget({
     super.key,
     required this.icon,

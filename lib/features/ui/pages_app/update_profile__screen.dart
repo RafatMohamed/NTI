@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nti_proj/features/ui/pages_app/profile_page_app_screen.dart';
 import 'package:nti_proj/features/ui/pages_app/setting_screen.dart';
+
 import '../../../core/resources/Icons/my_icons.dart';
 import '../../../core/widget_app_toDo/default_container_profile_update.dart';
 import '../../../core/widget_app_toDo/info_user_widget.dart';
@@ -10,7 +11,9 @@ import 'main_home_app_screen.dart';
 
 class UpdateProfilePage extends StatelessWidget {
   const UpdateProfilePage({super.key, required this.user});
+
   final User user;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +25,9 @@ class UpdateProfilePage extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  InfoUserWidget(user: user,),
+                  InfoUserWidget(
+                    user: user,
+                  ),
                 ],
               ),
               SizedBox(
@@ -62,9 +67,16 @@ class UpdateProfilePage extends StatelessWidget {
               TextButtonWidgetGo(
                   text: "Save",
                   onTap: () {
-                    return Navigator.push(context, MaterialPageRoute(builder: (context) {
-                      return HomeMainPage(user: user,);
-                    },),);
+                    return Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomeMainPage(
+                            user: user,
+                          );
+                        },
+                      ),
+                    );
                   }),
             ],
           ),

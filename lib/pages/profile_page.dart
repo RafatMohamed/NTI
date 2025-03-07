@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:nti_proj/widget/text_widget.dart';
+
 import '../core/resources/Colors/my_colors.dart';
 import '../core/resources/Icons/my_icons.dart';
 import '../core/resources/images/my_images.dart';
 import '../widget/icon_svg_widget.dart';
-List <int> item=List.generate(4, (index) {
-  return index;
-},);
+
+List<int> item = List.generate(
+  4,
+  (index) {
+    return index;
+  },
+);
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -15,8 +21,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.backgroundScaffoldColor,
-      body:
-      SafeArea(
+      body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -35,7 +40,8 @@ class ProfilePage extends StatelessWidget {
                       topEnd: Radius.circular(55),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
                   child: Column(
                     spacing: 16,
                     children: [
@@ -127,7 +133,9 @@ class ProfilePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 20),
                         decoration: BoxDecoration(
@@ -140,11 +148,10 @@ class ProfilePage extends StatelessWidget {
                             decoration: InputDecoration(
                               hintText: "Select an Option",
                               hintStyle: TextStyle(
-                                fontFamily: "LexendDeca",
-                                fontWeight: FontWeight.w300,
-                                fontSize: 16,
-                                 color: Colors.black
-                              ),
+                                  fontFamily: "LexendDeca",
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 16,
+                                  color: Colors.black),
                               border: InputBorder.none,
                             ),
                             style: TextStyle(
@@ -156,45 +163,56 @@ class ProfilePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                             alignment: AlignmentDirectional.center,
                             dropdownColor: MyColors.backgroundScaffoldColor,
-                            items: item.map((index) {
-                              return DropdownMenuItem(
-                                value: index,
-                                child: Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        ClipRRect(
-                                          borderRadius: BorderRadius.circular(20),
-                                          child:
-                                          Image.asset(MyImages.imageFlagpalestine,width: 40,height: 40,fit: BoxFit.cover,),
-                                        ),
-                                        SizedBox(width: 15,),
-                                        Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            TextWidget(
-                                              text: "Hello!",
-                                              fontFamily: "LexendDeca",
-                                              fontWeight: FontWeight.w300,
-                                              fontSize: 12,
+                            items: item.map(
+                              (index) {
+                                return DropdownMenuItem(
+                                  value: index,
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(20),
+                                            child: Image.asset(
+                                              MyImages.imageFlagpalestine,
+                                              width: 40,
+                                              height: 40,
+                                              fit: BoxFit.cover,
                                             ),
-                                            SizedBox(height: 5,),
-                                            TextWidget(
-                                              text: "Option $index",
-                                              fontFamily: "LexendDeca",
-                                              fontWeight: FontWeight.w300,
-                                              fontSize: 16,
-                                            ),
-                                          ],
-                                        ),
-
-                                      ],
-                                    ),
-                                  ],
-                                ) ,
-                              );
-                            },).toList(),
-                              onChanged:(value) {},
+                                          ),
+                                          SizedBox(
+                                            width: 15,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              TextWidget(
+                                                text: "Hello!",
+                                                fontFamily: "LexendDeca",
+                                                fontWeight: FontWeight.w300,
+                                                fontSize: 12,
+                                              ),
+                                              SizedBox(
+                                                height: 5,
+                                              ),
+                                              TextWidget(
+                                                text: "Option $index",
+                                                fontFamily: "LexendDeca",
+                                                fontWeight: FontWeight.w300,
+                                                fontSize: 16,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            ).toList(),
+                            onChanged: (value) {},
                           ),
                         ),
                       ),

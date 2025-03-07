@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../core/resources/Colors/my_colors.dart';
 import '../../../core/widget_app_toDo/icon_pop.dart';
 import '../../../core/widget_app_toDo/text_widget_app.dart';
 import '../../service/cubit_setting/setting_state.dart';
 import '../../service/cubit_setting/settings_cubit.dart';
-
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -27,10 +27,9 @@ class SettingPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: BlocConsumer<SettingCubit, SettingState>(
-            listener: (context, state) {
-            },
+            listener: (context, state) {},
             builder: (context, state) {
-             final cubit = context.read<SettingCubit>();
+              final cubit = context.read<SettingCubit>();
               return Column(
                 spacing: 40,
                 children: [
@@ -71,11 +70,10 @@ class SettingPage extends StatelessWidget {
                         side: BorderSide(
                           style: BorderStyle.solid,
                           strokeAlign: 20,
-
                           color: Colors.grey,
                         ),
                         value: state.isValueCheck,
-                        onChanged: ( value) {
+                        onChanged: (value) {
                           cubit.checkBoxValue(value!);
                         },
                       )
@@ -93,4 +91,3 @@ class SettingPage extends StatelessWidget {
     );
   }
 }
-
