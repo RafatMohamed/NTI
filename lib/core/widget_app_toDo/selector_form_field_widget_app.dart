@@ -8,12 +8,12 @@ import '../resources/Colors/my_colors.dart';
 class DropDownFormField extends StatelessWidget {
   const DropDownFormField({
     super.key,
-    required this.text, required this.iconModel,
+    required this.text,
+    required this.iconModel,
   });
 
   final String text;
   final IconModels iconModel;
-
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,8 @@ class DropDownFormField extends StatelessWidget {
               color: iconModel.iconColorDecoration,
               child: SvgPicture.asset(
                 iconModel.icon,
-                colorFilter: ColorFilter.mode(iconModel.iconColor, BlendMode.srcIn),
+                colorFilter:
+                    ColorFilter.mode(iconModel.iconColor, BlendMode.srcIn),
                 fit: BoxFit.none,
               ),
             )),

@@ -9,8 +9,10 @@ class IconAddTask extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.all(20,),
+    return Padding(
+      padding: const EdgeInsets.all(
+        20,
+      ),
       child: IconButton(
           onPressed: () {
             Navigator.push(
@@ -30,5 +32,4 @@ class IconAddTask extends StatelessWidget {
           )),
     );
   }
-
 }

@@ -5,7 +5,6 @@ import '../../widget/icon_svg_widget.dart';
 import '../resources/Colors/my_colors.dart';
 import '../resources/Icons/my_icons.dart';
 
-
 class TextFormFieldApp extends StatefulWidget {
   const TextFormFieldApp({
     super.key,
@@ -29,7 +28,7 @@ class TextFormFieldApp extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.borderDecorationColor = MyColors.greenColor,
-     this.validator,
+    this.validator,
     required this.onFieldSubmitted,
     this.focusNode,
     required this.controller,
@@ -84,7 +83,9 @@ class _TextFormFieldAppState extends State<TextFormFieldApp> {
         color: Colors.white, // Keep background white
         borderRadius: BorderRadius.circular(widget.radius),
         border: Border.all(
-          color: _isFieldFilled ? widget.borderDecorationColor : Colors.transparent, // Change border color dynamically
+          color: _isFieldFilled
+              ? widget.borderDecorationColor
+              : Colors.transparent, // Change border color dynamically
           width: 2,
         ),
       ),
@@ -100,20 +101,21 @@ class _TextFormFieldAppState extends State<TextFormFieldApp> {
         decoration: InputDecoration(
           floatingLabelBehavior: FloatingLabelBehavior.always,
           floatingLabelAlignment: FloatingLabelAlignment.start,
-          border: InputBorder.none, // Remove border from InputDecoration
+          border: InputBorder.none,
+          // Remove border from InputDecoration
           icon: widget.iconSuffix
               ? IConSvgWidget(
-            radius: 5,
-            width: 35,
-            height: 35,
-            colorContanier: MyColors.containerHomeColor,
-            icon: SvgPicture.asset(
-              width: 19,
-              height: 19,
-              MyIcons.iconHomeSvg,
-              fit: BoxFit.none,
-            ),
-          )
+                  radius: 5,
+                  width: 35,
+                  height: 35,
+                  colorContanier: MyColors.containerHomeColor,
+                  icon: SvgPicture.asset(
+                    width: 19,
+                    height: 19,
+                    MyIcons.iconHomeSvg,
+                    fit: BoxFit.none,
+                  ),
+                )
               : null,
           labelText: widget.labelText,
           labelStyle: TextStyle(

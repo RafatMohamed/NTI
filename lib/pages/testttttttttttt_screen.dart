@@ -27,22 +27,26 @@ class TestLoading extends TestState {}
 
 class TestSuccess extends TestState {
   final UserInputInfo user;
+
   TestSuccess({required this.user});
 }
 
 class TestError extends TestState {
   String message;
+
   TestError({required this.message});
 }
 
 class LoginSuccess extends TestState {
   final UserInputInfo user;
+
   LoginSuccess({required this.user});
 }
 
 // Cubit
 class TestCubit extends Cubit<TestState> {
   UserInputInfo user;
+
   TestCubit({required this.user}) : super(TestInitial());
 
   void submit() async {
@@ -167,6 +171,7 @@ class TaskTextFormPage22 extends StatelessWidget {
 // Screen to Show User Info
 class TestCubitApl extends StatelessWidget {
   const TestCubitApl({super.key, required this.user});
+
   final UserInputInfo user;
 
   @override
@@ -202,6 +207,7 @@ class TestCubitApl extends StatelessWidget {
 // Login Screen
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key, required this.user});
+
   final UserInputInfo user;
 
   @override
@@ -216,7 +222,8 @@ class LoginScreen extends StatelessWidget {
         body: BlocConsumer<TestCubit, TestState>(
           listener: (context, state) {
             if (state is LoginSuccess) {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => HiUserScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HiUserScreen()));
             } else if (state is TestError) {
               showDialog(
                 context: context,
@@ -251,7 +258,8 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () => cubit.submitLogin(email: enteredEmail, password: enteredPassword),
+                    onPressed: () => cubit.submitLogin(
+                        email: enteredEmail, password: enteredPassword),
                     child: Text("Login"),
                   ),
                 ],

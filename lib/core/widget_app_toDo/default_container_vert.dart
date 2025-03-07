@@ -6,7 +6,6 @@ import '../../features/models/icon_models.dart';
 import '../resources/Colors/my_colors.dart';
 
 class DefaultContainerVert extends StatelessWidget {
-
   final String text;
   final String value;
 
@@ -16,7 +15,7 @@ class DefaultContainerVert extends StatelessWidget {
       {super.key,
       required this.text,
       required this.value,
-        required this.iconModels});
+      required this.iconModels});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,8 @@ class DefaultContainerVert extends StatelessWidget {
                     color: iconModels.iconColorDecoration,
                     child: SvgPicture.asset(
                       iconModels.icon,
-                      colorFilter: ColorFilter.mode(iconModels.iconColor, BlendMode.srcIn),
+                      colorFilter: ColorFilter.mode(
+                          iconModels.iconColor, BlendMode.srcIn),
                       fit: BoxFit.none,
                     ),
                   )),

@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
+
 import '../core/resources/Colors/my_colors.dart';
 import '../core/resources/Icons/my_icons.dart';
 import 'icon_svg_widget.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 
 class TaskTextForm extends StatelessWidget {
-  const TaskTextForm(
-      {super.key,
-      this.iconSuffix = false,
-      this.color = Colors.white,
-      required this.labelText,
-      this.maxLine = 1, required this.hintText,
-        this.keyboardType=TextInputType.text,
-       required this.onFieldSubmitted, this.controller,
+  const TaskTextForm({
+    super.key,
+    this.iconSuffix = false,
+    this.color = Colors.white,
+    required this.labelText,
+    this.maxLine = 1,
+    required this.hintText,
+    this.keyboardType = TextInputType.text,
+    required this.onFieldSubmitted,
+    this.controller,
+  });
 
-      });
   final bool iconSuffix;
   final Color color;
   final String labelText;
@@ -40,7 +43,7 @@ class TaskTextForm extends StatelessWidget {
         onFieldSubmitted: onFieldSubmitted,
         decoration: InputDecoration(
           border: InputBorder.none,
-         contentPadding: EdgeInsetsDirectional.only(top: 10,bottom: 10),
+          contentPadding: EdgeInsetsDirectional.only(top: 10, bottom: 10),
           icon: iconSuffix
               ? IConSvgWidget(
                   radius: 5,
@@ -69,7 +72,7 @@ class TaskTextForm extends StatelessWidget {
             fontWeight: FontWeight.w200,
           ),
         ),
-        keyboardType:keyboardType,
+        keyboardType: keyboardType,
         maxLines: maxLine,
         textInputAction: TextInputAction.next,
         enableSuggestions: true,
@@ -93,10 +96,12 @@ class TimeTextForm extends StatelessWidget {
       this.color = Colors.white,
       required this.labelText,
       this.maxLine = 1});
+
   final bool? iconSuffix;
   final Color color;
   final String labelText;
   final int maxLine;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -174,7 +179,6 @@ class TimeTextFormSt extends StatefulWidget {
 }
 
 class _TimeTextFormStState extends State<TimeTextFormSt> {
-
   final TextEditingController _dateTimeController = TextEditingController();
 
   // Optional: store the selected DateTime
@@ -193,7 +197,8 @@ class _TimeTextFormStState extends State<TimeTextFormSt> {
       width: double.infinity,
       child: TextFormField(
         controller: _dateTimeController,
-        readOnly: true, // Prevent the keyboard from popping up
+        readOnly: true,
+        // Prevent the keyboard from popping up
         maxLines: widget.maxLine,
         decoration: InputDecoration(
           border: InputBorder.none,
@@ -234,15 +239,14 @@ class _TimeTextFormStState extends State<TimeTextFormSt> {
         ),
         onTap: () async {
           // 1. Show the Date Picker
-          final DateTime? pickedDate =
-          await showDatePicker(
+          final DateTime? pickedDate = await showDatePicker(
             context: context,
             initialDate: _selectedDateTime ?? DateTime.now(),
             firstDate: DateTime(2000),
             lastDate: DateTime(2100),
           );
 
-          if (pickedDate == null) return ; // User canceled
+          if (pickedDate == null) return; // User canceled
 
           // 2. Show the Time Picker
           final TimeOfDay? pickedTime = await showTimePicker(

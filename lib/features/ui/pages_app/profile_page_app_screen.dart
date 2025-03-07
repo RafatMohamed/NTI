@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../core/resources/images/my_images.dart';
 import '../../../core/widget_app_toDo/text_button_widget_app.dart';
 import '../../../core/widget_app_toDo/text_form_field_app.dart';
@@ -52,7 +53,8 @@ class ProfilePageApp extends StatelessWidget {
                           MaterialPageRoute(
                             builder: (context) {
                               return HomeMainPage(
-                                user: state.userLogin, // Pass the entire user object, not just the name
+                                user: state
+                                    .userLogin, // Pass the entire user object, not just the name
                               );
                             },
                           ),
@@ -103,19 +105,18 @@ class ProfilePageApp extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30),
                             child: cubit.userLogin.imgProfile != null
                                 ? Image.file(
-                              cubit.userLogin.imgProfile!,
-                              height: 60,
-                              width: 60,
-                              fit: BoxFit.fill,
-                            )
+                                    cubit.userLogin.imgProfile!,
+                                    height: 60,
+                                    width: 60,
+                                    fit: BoxFit.fill,
+                                  )
                                 : Image.asset(
-                              MyImages.imageFlagpalestine,
-                              height: 60,
-                              width: 60,
-                              fit: BoxFit.fill,
-                            ),
+                                    MyImages.imageFlagpalestine,
+                                    height: 60,
+                                    width: 60,
+                                    fit: BoxFit.fill,
+                                  ),
                           ),
-
                           SizedBox(height: 10),
                           ElevatedButton(
                             onPressed: cubit.pickImage,

@@ -39,8 +39,10 @@ class HomePage extends StatelessWidget {
           ],
         ),
         body: Center(
-          child:
-          TextButtonWidgetGo(text: 'Test Cubit ', onTap: () {},),
+          child: TextButtonWidgetGo(
+            text: 'Test Cubit ',
+            onTap: () {},
+          ),
         ),
       ),
     );

@@ -6,9 +6,9 @@ import '../../../core/widget_app_toDo/info_user_widget.dart';
 import '../../../core/widget_app_toDo/text_widget_app.dart';
 import '../../models/user_app.dart';
 
+
 class HomeTask extends StatelessWidget {
   const HomeTask({super.key, required this.user});
-
   final User user;
 
   @override
@@ -20,9 +20,7 @@ class HomeTask extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InfoUserWidget(
-                  user: user,
-                ),
+                InfoUserWidget(user: user,),
                 IconAddTask(),
               ],
             ),

@@ -68,17 +68,23 @@ class TestCubitApl extends StatelessWidget {
                 TextWidgetApp(text: user.password),
               ],
             ),
-            SizedBox(height: 60,),
+            SizedBox(
+              height: 60,
+            ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return LoginScreen(user1: user,);
-                },));
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return LoginScreen(
+                      user1: user,
+                    );
+                  },
+                ));
               },
-              child: Text("go to login"),),
+              child: Text("go to login"),
+            ),
           ],
         ),
-
       ),
     );
   }

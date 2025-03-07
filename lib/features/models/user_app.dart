@@ -1,11 +1,11 @@
- import 'dart:io';
+import 'dart:io';
 
-
-class User{
+class User {
   String name;
   File? imgProfile;
+
   User({
     required this.name,
-     this.imgProfile,
+    this.imgProfile,
   });
-  }
+}

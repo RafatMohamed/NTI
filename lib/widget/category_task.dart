@@ -13,6 +13,7 @@ class CategoryTask extends StatelessWidget {
     required this.detailsTextDo,
     this.colorStatuesText = Colors.white,
   });
+
   final Color? backgroundColorIcon;
   final IconData? icon;
   final String textDo;

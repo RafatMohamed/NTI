@@ -1,12 +1,14 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+
 import '../container_mode.dart';
 import '../core/resources/images/my_images.dart';
 import '../widget/default_contanier.dart';
-List <ContanierObj> list = [
-ContanierObj(text: "EG", color: Colors.black),
-ContanierObj(text: "EN", color: Colors.red),
+
+List<ContanierObj> list = [
+  ContanierObj(text: "EG", color: Colors.black),
+  ContanierObj(text: "EN", color: Colors.red),
   ContanierObj(text: "USA", color: Colors.cyan),
   ContanierObj(text: "UAE", color: Colors.black),
   ContanierObj(text: "GR", color: Colors.red),
@@ -15,11 +17,10 @@ ContanierObj(text: "EN", color: Colors.red),
   ContanierObj(text: "MAR", color: Colors.red),
   ContanierObj(text: "MASOURA", color: Colors.cyan),
   ContanierObj(text: "ABOWDAWOOD", color: Colors.black),
-
 ];
+
 class TestPageNti extends StatelessWidget {
   const TestPageNti({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,67 +31,73 @@ class TestPageNti extends StatelessWidget {
           children: [
             Expanded(
               child: ListView(
-                physics: BouncingScrollPhysics(),
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                children:[
-                  SizedBox(
-                    height: 150,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      itemBuilder:(context, index) {
-                        return list.map((e){
-                          return DefaultContanierHor(color: e.color, data: e.text, onTap:() {
-                            log("this Scroll in Horzintal");
-                          },);
-                        }).toList()[index];
-                      } ,
-                      itemCount:10 ,
-                      scrollDirection: Axis.horizontal,
+                  physics: BouncingScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: [
+                    SizedBox(
+                      height: 150,
+                      child: ListView.builder(
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return list.map((e) {
+                            return DefaultContanierHor(
+                              color: e.color,
+                              data: e.text,
+                              onTap: () {
+                                log("this Scroll in Horzintal");
+                              },
+                            );
+                          }).toList()[index];
+                        },
+                        itemCount: 10,
+                        scrollDirection: Axis.horizontal,
+                      ),
                     ),
-                  ),
-                  Divider(
-                    height: 30,
-                    color: Colors.black,
-                  ),
-                  ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
-                    separatorBuilder: (context,index){
-                      return Center(
-                        child:  Image.asset(
-                          MyImages.imageFlagpalestine,
-                          height: 80,
-                          width: double.infinity,
-                          fit: BoxFit.fill,
-                        ),
-                      );
-                    },
-                    itemBuilder:(context, index) {
-                      return list.map((e){
-                        return DefaultContanier(color: e.color, data: e.text,onTap: () {
-                          log("this Scroll in Vertical");
-                        },);
-                      }).toList()[index];
-                    } ,
-                    itemCount:10 ,
-                    scrollDirection: Axis.vertical,
-                  ),
-                ]
-              ),
+                    Divider(
+                      height: 30,
+                      color: Colors.black,
+                    ),
+                    ListView.separated(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      separatorBuilder: (context, index) {
+                        return Center(
+                          child: Image.asset(
+                            MyImages.imageFlagpalestine,
+                            height: 80,
+                            width: double.infinity,
+                            fit: BoxFit.fill,
+                          ),
+                        );
+                      },
+                      itemBuilder: (context, index) {
+                        return list.map((e) {
+                          return DefaultContanier(
+                            color: e.color,
+                            data: e.text,
+                            onTap: () {
+                              log("this Scroll in Vertical");
+                            },
+                          );
+                        }).toList()[index];
+                      },
+                      itemCount: 10,
+                      scrollDirection: Axis.vertical,
+                    ),
+                  ]),
             ),
             Container(
                 width: double.infinity,
                 height: 70,
                 decoration: BoxDecoration(
                     color: Colors.black,
-                    borderRadius: BorderRadius.circular(15)
-                ),
+                    borderRadius: BorderRadius.circular(15)),
                 child: Center(
                     child: CircularProgressIndicator(
-                      color: Colors.cyan,
-                      backgroundColor: Colors.white,
-                    ))),
+                  color: Colors.cyan,
+                  backgroundColor: Colors.white,
+                ))),
           ],
         ),
       ),

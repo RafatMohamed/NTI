@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nti_proj/pages/test_cubit_screen.dart';
+
 import '../core/resources/Colors/my_colors.dart';
 import '../core/widget_app_toDo/text_button_widget_app.dart';
 import '../features/models/user_input_inf.dart';
@@ -11,6 +12,7 @@ import '../widget/text_widget.dart';
 
 class TaskTextFormPage2 extends StatelessWidget {
   const TaskTextFormPage2({super.key});
+
   @override
   Widget build(BuildContext context1) {
     final UserInputInfo user1 = UserInputInfo(
@@ -54,29 +56,25 @@ class TaskTextFormPage2 extends StatelessWidget {
                       },
                     ),
                   );
-                }
-                else if (state is TestError) {
+                } else if (state is TestError) {
                   showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                      backgroundColor: MyColors.greenColor,
-                      content: Text("Error"),
-                      title: Text(state.message),
-                      shape: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          child: Text("Ok"),
-                        )
-                      ]
-                  ),
+                    context: context,
+                    builder: (context) => AlertDialog(
+                        backgroundColor: MyColors.greenColor,
+                        content: Text("Error"),
+                        title: Text(state.message),
+                        shape: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text("Ok"),
+                          )
+                        ]),
                   );
-                }
-                else if (state is TestLoading) {
+                } else if (state is TestLoading) {
                   Center(
                     child: CircularProgressIndicator(
                       color: MyColors.greenColor,
@@ -138,7 +136,7 @@ class TaskTextFormPage2 extends StatelessWidget {
                     TextButtonWidgetGo(
                       text: "Save ",
                       onTap: () {
-                      cubit.submit();
+                        cubit.submit();
                       },
                     ),
                   ],

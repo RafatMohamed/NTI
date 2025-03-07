@@ -9,7 +9,7 @@ class DefaultContainerHor extends StatelessWidget {
       {super.key,
       required this.text,
       required this.desc,
-        required this.iconModels});
+      required this.iconModels});
 
   final String text;
   final String desc;
@@ -20,7 +20,7 @@ class DefaultContainerHor extends StatelessWidget {
     return Container(
       width: 230,
       height: 135,
-      padding: EdgeInsetsDirectional.symmetric(horizontal: 16,vertical: 13),
+      padding: EdgeInsetsDirectional.symmetric(horizontal: 16, vertical: 13),
       decoration: BoxDecoration(
         color: iconModels.iconColor,
         borderRadius: BorderRadius.circular(20),
@@ -35,12 +35,12 @@ class DefaultContainerHor extends StatelessWidget {
               TextWidgetApp(
                 text: text,
                 fontSize: 12,
-                  color: iconModels.iconColorDecoration,
+                color: iconModels.iconColorDecoration,
               ),
               IconButton(
                 onPressed: () {},
                 icon: Container(
-                  decoration:BoxDecoration(
+                  decoration: BoxDecoration(
                     color: iconModels.iconColorDecoration,
                     borderRadius: BorderRadius.circular(5),
                   ),

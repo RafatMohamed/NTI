@@ -18,11 +18,10 @@ class TextWidgetApp extends StatelessWidget {
     this.fontWeight = FontWeight.normal,
     this.fontSize = 18,
     this.color = MyColors.textBlackColor,
-    this.fontFamily="LexendDeca",
+    this.fontFamily = "LexendDeca",
     this.fontStyle,
     this.textAlign = TextAlign.center,
-     this.paddingHorizontal=0,
-
+    this.paddingHorizontal = 0,
   });
 
   @override
@@ -36,7 +35,7 @@ class TextWidgetApp extends StatelessWidget {
           color: color,
           fontSize: fontSize,
           fontWeight: fontWeight,
-          fontFamily:fontFamily,
+          fontFamily: fontFamily,
           fontStyle: fontStyle,
         ),
       ),

@@ -15,7 +15,7 @@ class LetsStart extends StatelessWidget {
       body: Center(
         child: Padding(
           padding:
-          const EdgeInsetsDirectional.only(top: 90, start: 36, end: 36),
+              const EdgeInsetsDirectional.only(top: 90, start: 36, end: 36),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

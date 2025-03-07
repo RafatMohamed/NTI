@@ -1,10 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nti_proj/test_state.dart';
+
 import 'features/models/user_input_inf.dart';
 
 class TestCubit extends Cubit<TestState> {
   UserInputInfo user;
-  TestCubit({required this.user, }) : super(TestInitial());
+
+  TestCubit({
+    required this.user,
+  }) : super(TestInitial());
 
   void submit() async {
     emit(TestLoading());
@@ -24,7 +28,7 @@ class TestCubit extends Cubit<TestState> {
     }
   }
 
-  void submitLogin({required String email,required String password}) {
+  void submitLogin({required String email, required String password}) {
     emit(TestLoading());
 
     if (user.email == email && user.password == password) {
@@ -33,10 +37,4 @@ class TestCubit extends Cubit<TestState> {
       emit(TestError(message: "Invalid email or password"));
     }
   }
-  }
-
-
-
-
-
-
+}
